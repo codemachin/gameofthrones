@@ -9,8 +9,8 @@
         <li class="collection-item">Gender : {{currentCharacter.character.gender}}</li>
         <li class="collection-item">Born : {{currentCharacter.character.born}}</li>
         <li class="collection-item">Died : {{currentCharacter.character.born}}</li>
-        <li class="collection-item">Father : {{currentCharacter.character.father}}</li>
-        <li class="collection-item">Mother : {{currentCharacter.character.mother}}</li>
+        <li class="collection-item">Father : <a ng-href="#/{{ currentCharacter.character.father.replace('https://www.anapioficeandfire.com/api/','')}}">click me</li>
+        <li class="collection-item">Mother : <a ng-href="#/{{ currentCharacter.character.mother.replace('https://www.anapioficeandfire.com/api/','')}}">{{currentCharacter.character.mother}}</li>
         <li class="collection-item">Titles : <p ng-repeat="title in currentCharacter.character.titles">{{title}}</p></li>
         <li class="collection-item">Books : <p ng-repeat="bk in currentCharacter.character.books"><a ng-href="#/{{ bk.replace('http:///api/','')}}">{{bk}}</a></p></li>
         <li class="collection-item">Played By : <p ng-repeat="pb in currentCharacter.character.playedBy">{{pb}}</p></li>
