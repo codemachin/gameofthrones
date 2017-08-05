@@ -49,7 +49,7 @@ this.sort = function(){
 
   }// end load all blogs
   
-    this.allBooks();
+    
                    
   
     this.allHouses = function(){
@@ -77,7 +77,7 @@ this.sort = function(){
   }// end load all blogs
   
 
-   this.allHouses();
+  
                    
 
 
@@ -109,6 +109,10 @@ this.sort = function(){
 
   }// end load all blogs
   
-   this.allCharacters(); 
+  this.callAll = function(){
+    main.allBooks();
+     main.allHouses();
+    main.allCharacters(); 
+  }
                     
 }]); // end controller

@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col s12">
       <ul class="tabs" ng-init="selectedTab=1">
-        <li class="tab col s3"><a class="active" id="a" ng-click="selectedTab=1" show-tab href="javascript:;" style="border-bottom: solid 2px #f6b2b5">Everything</a></li>
+        <li class="tab col s3"><a id="a" ng-click="selectedTab=1" class="active" show-tab href="javascript:;" style="border-bottom: solid 2px #f6b2b5">Everything</a></li>
         <li class="tab col s3"><a id="b" ng-click="selectedTab=2" show-tab href="javascript:;">Books</a></li>
         <li class="tab col s3"><a ng-click="selectedTab=3" show-tab id="c" href="javascript:;">Houses</a></li>
         <li class="tab col s3"><a ng-click="selectedTab=4" show-tab id="d" href="javascript:;">Characters</a></li>
       </ul><br><br>
     </div>
-    <div id="test1" class="col s12" ng-show="selectedTab==1" ng-controller="allController as myAll">
+    <div id="test1" class="col s12" ng-show="selectedTab==1" ng-controller="allController as myAll" ng-init="myAll.callAll()">
     <div class="col s6">
     <div class="input-field">
     <input type="text" id="search1" ng-model="search.name">
@@ -33,7 +33,7 @@
     </div>
 
 
-    <div id="test2" ng-show="selectedTab==2" class="col s12" ng-controller="allBooksController as myBooks">
+    <div id="test2" ng-show="selectedTab==2" class="col s12" ng-controller="allBooksController as myBooks" ng-init="myBooks.allBooks()">
     <div class="col s6">
     <div class="input-field">
     <input type="text" id="search1" ng-model="search.name">
@@ -51,7 +51,7 @@
         </div>
         </div>
     </div>
-    <div id="test3" ng-show="selectedTab==3" class="col s12" ng-controller="allHousesController as myHouse">
+    <div id="test3" ng-show="selectedTab==3" class="col s12" ng-controller="allHousesController as myHouse" ng-init="myHouse.allHouses()">
     <div class="col s6">
     <div class="input-field">
     <input type="text" id="search1" ng-model="search.name">

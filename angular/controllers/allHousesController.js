@@ -44,7 +44,7 @@ this.loadMore = function () {
     }
 
   }// end load all blogs
-  this.allHouses();
+  
 
   
    

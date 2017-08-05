@@ -35,7 +35,7 @@ this.sort = function(){
 
 
   }// end load all blogs
-  this.allBooks();
+ 
 
 
    
