@@ -12,8 +12,8 @@
         <li class="collection-item">Number of Pages : {{currentBook.book.numberOfPages}}</li>
         <li class="collection-item">ISBN : {{currentBook.book.isbn}}</li>
         <li class="collection-item">Media Type : {{currentBook.book.mediaType}}</li>
-        <li class="collection-item">POV characters : <p ng-repeat="pov in currentBook.book.povCharacters"><a ng-href="#/{{ pov.replace('https://www.anapioficeandfire.com/api','')}}">POV character {{$index}}</a></p></li>
-        <li class="collection-item">Characters : <p ng-repeat="char in currentBook.book.characters"><a ng-href="#/{{ char.replace('https://www.anapioficeandfire.com/api','')}}">Character {{$index}}</a></p></li>     
+        <li class="collection-item">POV characters : <p ng-repeat="pov in currentBook.book.povCharacters"><a ng-href="#/{{ pov.replace('https://www.anapioficeandfire.com/api/','')}}">POV character {{$index}}</a></p></li>
+        <li class="collection-item">Characters : <p ng-repeat="char in currentBook.book.characters"><a ng-href="#/{{ char.replace('https://www.anapioficeandfire.com/api/','')}}">Character {{$index}}</a></p></li>     
       </ul>
           
         </div>
