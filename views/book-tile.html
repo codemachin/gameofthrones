@@ -1,0 +1,23 @@
+<div class="col s12 l4">
+      <div class="card sticky-action hoverable blue lighten-4">
+        <div class="card-content" style="min-height: 320px">
+          <span class="card-title activator grey-text text-darken-4">{{book.name}}<i class="material-icons right">more_vert</i></span><br>
+          <p ng-repeat="author in book.authors">
+           by {{author}}
+           </p>
+           <p>Released on {{book.released | date}}</p>
+           <p>Number of pages : {{book.numberOfPages}}</p>
+           <p>Publisher : {{book.publisher}}</p>
+           <p>Country : {{book.country}}</p>
+            
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Book Type : {{book.mediaType}}</p>
+          <p>ISBN : {{book.isbn}}</p>
+        </div>
+        <div class="card-action">
+          <a ng-href="#/{{ book.url.replace('https://www.anapioficeandfire.com/api/','')}}">Click for more Info</a>
+        </div>
+      </div>
+</div>

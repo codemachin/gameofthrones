@@ -1,0 +1,27 @@
+<div class="col s12 l6">
+      <div class="card sticky-action hoverable brown lighten-4">
+        <div class="card-content" style="min-height: 400px">
+          <span class="card-title activator grey-text text-darken-4">{{book.name}}<i class="material-icons right">more_vert</i></span><br>
+          <p>
+           Region : {{book.region}}
+           </p><br>
+           <p>Coat Of Arms : {{book.coatOfArms}}</p><br>
+           <p>Words : {{book.words}}</p>
+           <p ng-repeat="seat in book.seats">
+              Seats : {{seat}}
+           </p>
+           
+            
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Current Lord : <a ng-href="#/{{ book.url.replace('https://www.anapioficeandfire.com/api/','')}}">click here</a></p>
+          <p>Founder : <a ng-href="#/{{ book.url.replace('https://www.anapioficeandfire.com/api/','')}}">click here</a></p>
+          <p>Heir : <a ng-href="#/{{ book.url.replace('https://www.anapioficeandfire.com/api/','')}}">click here</a></p>
+          <p>OverLord : <a ng-href="#/{{ book.overlord.replace('https://www.anapioficeandfire.com/api/','')}}">click here</a></p>
+        </div>
+        <div class="card-action">
+          <a ng-href="#/{{ book.url.replace('https://www.anapioficeandfire.com/api/','')}}">Click for more Info</a>
+        </div>
+      </div>
+  </div>
