@@ -20,8 +20,10 @@ console.log(this.id);
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
+          if(response.status != -1){
           alert("some error occurred. Check the console.");
           console.log(response);
+        }
         });
 
 

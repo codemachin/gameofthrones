@@ -23,7 +23,7 @@ this.loadMore = function () {
   
 
   this.allCharacters = function(){
-   for(i=1;i<50;i++){
+   for(var i=1;i<50;i++){
       BookService.getAllCharacters([i])
       .then(function successCallback(response) {
           // this callback will be called asynchronously
@@ -37,8 +37,10 @@ this.loadMore = function () {
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
+          if(response.status != -1){
           alert("some error occurred. Check the console.");
           console.log(response);
+        }
         });
     }
 
