@@ -55,6 +55,7 @@ this.sort = function(){
                    
   
    this.allHouses = function(){
+    // Runs the loop 12 times as data is paginated 
    for(var i=1;i<12;i++){
       BookService.getAllHouses([i])
       .then(function successCallback(response) {
@@ -87,7 +88,7 @@ this.sort = function(){
 
 
   this.allCharacters = function(){
-    
+   // Runs the loop 50 times as data is paginated 
    for(var i=1;i<50;i++){
     BookService.getAllCharacters([i])
       .then(function successCallback(response) {

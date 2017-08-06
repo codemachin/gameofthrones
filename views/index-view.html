@@ -7,6 +7,7 @@
         <li class="tab col s3"><a ng-click="selectedTab=4" show-tab id="d" href="javascript:;">Characters</a></li>
       </ul><br><br>
     </div>
+    <!-- Start of 1st tab -->
     <div id="test1" class="col s12" ng-show="selectedTab==1" ng-controller="allController as myAll" ng-init="myAll.callAll()">
     <div class="col s6">
     <div class="input-field">
@@ -21,6 +22,7 @@
     </div>
     <div class="col s12">
         <div ng-repeat="book in myAll.all | orderBy : myAll.sortvar | filter : search | filter : search1 | limitTo : myAll.totalDisplayed">
+
            <all-books ng-if="book.isbn"></all-books>
            <all-house ng-if="book.region"></all-house>
            <all-characters ng-if="book.gender"></all-characters>
@@ -32,7 +34,7 @@
           </div>
     </div>
 
-
+    <!-- Start of 2nd tab -->
     <div id="test2" ng-show="selectedTab==2" class="col s12" ng-controller="allBooksController as myBooks" ng-init="myBooks.allBooks()">
     <div class="col s6">
     <div class="input-field">
@@ -51,6 +53,8 @@
         </div>
         </div>
     </div>
+
+    <!-- Start of 3rd tab -->
     <div id="test3" ng-show="selectedTab==3" class="col s12" ng-controller="allHousesController as myHouse" ng-init="myHouse.allHouses()">
     <div class="col s6">
     <div class="input-field">
@@ -74,7 +78,7 @@
           <button class="btn" ng-click="myHouse.loadMore()" >Load more</button>
           </div>
     </div>
-
+        <!-- Start of 4th tab -->
 <div id="test4" ng-show="selectedTab==4" class="col s12" ng-controller="allCharacterController as myCharacter">
     <div class="col s6">
     <div class="input-field">

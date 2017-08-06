@@ -11,6 +11,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+<!--start of body-->
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
@@ -49,7 +50,7 @@
 
   <div class="container" id="start">
     <div class="section">
-
+        <!-- view loading section-->
       <div ng-view>
       </div>
 
@@ -138,20 +139,5 @@
   <script src="angular/controllers/characterController.js"></script>
   <script type='text/javascript' src='angular/directives/loading-bar.js'></script>
 
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-    $("#download-button").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#start").offset().top
-          }, 700);
-      });
-    $("#about,#about1").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#abt").offset().top-100
-          }, 700);
-      });
-    });
-  </script>
   </body>
 </html>

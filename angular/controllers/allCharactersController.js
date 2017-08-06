@@ -23,6 +23,7 @@ this.loadMore = function () {
   
 
   this.allCharacters = function(){
+    // Runs the loop 50 times as data is paginated 
    for(var i=1;i<50;i++){
       BookService.getAllCharacters([i])
       .then(function successCallback(response) {

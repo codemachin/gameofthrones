@@ -23,6 +23,7 @@ this.loadMore = function () {
  
 
   this.allHouses = function(){
+    // Runs the loop 12 times as data is paginated 
    for(var i=1;i<12;i++){
       BookService.getAllHouses([i])
       .then(function successCallback(response) {

@@ -36,7 +36,7 @@ this.sort = function(){
         });
 
 
-  }// end load all blogs
+  }// end load all books
  
 
 
