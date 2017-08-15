@@ -3,24 +3,22 @@
         
         <div class="card-panel hoverable grey-text text-darken-4">
           
-      <ul class="collection with-header">
-        <li class="collection-header"><h4>{{currentCharacter.character.name}}</h4></li>
-        <li class="collection-item">Culture : {{currentCharacter.character.culture}}</li>
-        <li class="collection-item">Gender : {{currentCharacter.character.gender}}</li>
-        <li class="collection-item">Born : {{currentCharacter.character.born}}</li>
-        <li class="collection-item">Died : {{currentCharacter.character.born}}</li>
-        <li class="collection-item">Father : {{currentCharacter.character.father}}</li>
-        <li class="collection-item">Mother : {{currentCharacter.character.mother}}</li>
-        <li class="collection-item">Titles : <p ng-repeat="title in currentCharacter.character.titles">{{title}}</p></li>
-        <li class="collection-item">Books : <p ng-repeat="bk in currentCharacter.character.books"><a ng-href="#/{{ bk.replace('http:///api/','')}}">{{bk}}</a></p></li>
-        <li class="collection-item">Played By : <p ng-repeat="pb in currentCharacter.character.playedBy">{{pb}}</p></li>
-        <li class="collection-item">Tv Series : <p ng-repeat="tv in currentCharacter.character.tvSeries">{{tv}}</p></li>
-        <li class="collection-item">Aliases : <p ng-repeat="al in currentCharacter.character.aliases">{{al}}</p></li>
-        <li class="collection-item">Allegiances : <p ng-repeat="ag in currentCharacter.character.Allegiances">{{ag}}</p></li>     
-      </ul>
+            <ul class="collection with-header">
+                <li class="collection-header"><h4>{{currentCharacter.character.name}}</h4></li>
+                <li class="collection-item">Culture : {{currentCharacter.character.culture}}</li>
+                <li class="collection-item">Gender : {{currentCharacter.character.gender}}</li>
+                <li class="collection-item">Born : {{currentCharacter.character.born}}</li>
+                <li class="collection-item">Died : {{currentCharacter.character.born}}</li>
+                <li class="collection-item">Father : <a ng-href="#/{{ currentCharacter.character.father.replace('https://www.anapioficeandfire.com/api/','')}}">{{currentCharacter.character.father}}</a></li>
+                <li class="collection-item">Mother : <a ng-href="#/{{ currentCharacter.character.mother.replace('https://www.anapioficeandfire.com/api/','')}}">{{currentCharacter.character.father}}</a></li>
+                <li class="collection-item">Titles : <p ng-repeat="title in currentCharacter.character.titles">{{title}}</p></li>
+                <li class="collection-item">Books : <p ng-repeat="bk in currentCharacter.character.books"><a ng-href="#/{{ bk.replace('https://www.anapioficeandfire.com/api/','')}}">{{bk}}</a></p></li>
+                <li class="collection-item">Played By : <p ng-repeat="pb in currentCharacter.character.playedBy">{{pb}}</p></li>
+                <li class="collection-item">Tv Series : <p ng-repeat="tv in currentCharacter.character.tvSeries">{{tv}}</p></li>
+                <li class="collection-item">Aliases : <p ng-repeat="al in currentCharacter.character.aliases">{{al}}</p></li>
+                <li class="collection-item">Allegiances : <p ng-repeat="ag in currentCharacter.character.Allegiances">{{ag}}</p></li>     
+            </ul>
           
         </div>
       </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
+</div>

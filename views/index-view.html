@@ -1,98 +1,112 @@
 <div class="row">
     <div class="col s12">
-      <ul class="tabs" ng-init="selectedTab=1">
-        <li class="tab col s3"><a class="active" id="a" ng-click="selectedTab=1" show-tab href="javascript:;" style="border-bottom: solid 2px #f6b2b5">Everything</a></li>
-        <li class="tab col s3"><a id="b" ng-click="selectedTab=2" show-tab href="javascript:;">Books</a></li>
-        <li class="tab col s3"><a ng-click="selectedTab=3" show-tab id="c" href="javascript:;">Houses</a></li>
-        <li class="tab col s3"><a ng-click="selectedTab=4" show-tab id="d" href="javascript:;">Characters</a></li>
-      </ul><br><br>
+        <ul class="tabs" ng-init="selectedTab=1">
+            <li class="tab col s3"><a id="a" ng-click="selectedTab=1" class="active" show-tab href="javascript:;" style="border-bottom: solid 2px #f6b2b5">Everything</a></li>
+            <li class="tab col s3"><a id="b" ng-click="selectedTab=2" show-tab href="javascript:;">Books</a></li>
+            <li class="tab col s3"><a ng-click="selectedTab=3" show-tab id="c" href="javascript:;">Houses</a></li>
+            <li class="tab col s3"><a ng-click="selectedTab=4" show-tab id="d" href="javascript:;">Characters</a></li>
+      </ul>
+        <br><br>
     </div>
-    <div id="test1" class="col s12" ng-show="selectedTab==1" ng-controller="allController as myAll">
-    <div class="col s6">
-    <div class="input-field">
-    <input type="text" id="search1" ng-model="search.name">
-    <label for="search1">Search by name</label></div>
-    <div class="input-field">
-    <input type="text" id="search2" ng-model="search1">
-    <label for="search2">Search all</label></div>
-    </div>
-    <div class="col s6"><br>
-    <button class="btn" style="float: right;" ng-click="myAll.sort()">Sort A-Z</button>
-    </div>
-    <div class="col s12">
-        <div ng-repeat="book in myAll.all | orderBy : myAll.sortvar | filter : search | filter : search1 | limitTo : myAll.totalDisplayed">
-           <all-books ng-if="book.isbn"></all-books>
-           <all-house ng-if="book.region"></all-house>
-           <all-characters ng-if="book.gender"></all-characters>
-
+    <!-- Start of 1st tab -->
+    <div id="test1" class="col s12" ng-show="selectedTab==1" ng-controller="allController as myAll" ng-init="myAll.callAll()">
+        <div class="col s6">
+            <div class="input-field">
+                <input type="text" id="search1" ng-model="search.name">
+                <label for="search1">Search by name</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="search2" ng-model="search1">
+                <label for="search2">Search all</label>
+            </div>
         </div>
+        <div class="col s6"><br>
+            <button class="btn" style="float: right;" ng-click="myAll.sort()">Sort A-Z</button>
+        </div>
+        <div class="col s12">
+            <div ng-repeat="book in myAll.all | orderBy : myAll.sortvar | filter : search | filter : search1 | limitTo : myAll.totalDisplayed">
+
+                <all-books ng-if="book.isbn"></all-books>
+                <all-house ng-if="book.region"></all-house>
+                <all-characters ng-if="book.gender"></all-characters>
+
+            </div>
         </div>
         <div class="col s12" style="text-align: center;">
-          <button class="btn" ng-click="myAll.loadMore()" >Load more</button>
-          </div>
-    </div>
-
-
-    <div id="test2" ng-show="selectedTab==2" class="col s12" ng-controller="allBooksController as myBooks">
-    <div class="col s6">
-    <div class="input-field">
-    <input type="text" id="search1" ng-model="search.name">
-    <label for="search1">Search by name</label></div>
-    <div class="input-field">
-    <input type="text" id="search2" ng-model="search1.authors">
-    <label for="search2">Search by Author</label></div>
-    </div>
-    <div class="col s6"><br>
-    <button class="btn" style="float: right;" ng-click="myBooks.sort()">Sort A-Z</button>
-    </div>
-    <div class="col s12">
-        <div ng-repeat="book in myBooks.books | orderBy : myBooks.sortvar | filter : search | filter : search1">
-            <all-books></all-books>
-        </div>
+            <button class="btn" ng-click="myAll.loadMore()" >Load more</button>
         </div>
     </div>
-    <div id="test3" ng-show="selectedTab==3" class="col s12" ng-controller="allHousesController as myHouse">
-    <div class="col s6">
-    <div class="input-field">
-    <input type="text" id="search1" ng-model="search.name">
-    <label for="search1">Search by name</label></div>
-    <div class="input-field">
-    <input type="text" id="search2" ng-model="search1.region">
-    <label for="search2">Search by Region</label></div>
+
+    <!-- Start of 2nd tab -->
+    <div id="test2" ng-show="selectedTab==2" class="col s12" ng-controller="allBooksController as myBooks" ng-init="myBooks.allBooks()">
+        <div class="col s6">
+            <div class="input-field">
+                <input type="text" id="search1" ng-model="search.name">
+                <label for="search1">Search by name</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="search2" ng-model="search1.authors">
+                <label for="search2">Search by Author</label>
+            </div>
+        </div>
+        <div class="col s6"><br>
+            <button class="btn" style="float: right;" ng-click="myBooks.sort()">Sort A-Z</button>
+        </div>
+        <div class="col s12">
+            <div ng-repeat="book in myBooks.books | orderBy : myBooks.sortvar | filter : search | filter : search1">
+                <all-books></all-books>
+            </div>
+        </div>
     </div>
-     <div class="col s6"><br>
-      <button class="btn" style="float: right;" ng-click="myHouse.sort()">Sort A-Z</button>
-      </div>
-     <div class="col s12">
-        <div ng-repeat="book in myHouse.houses | orderBy : myHouse.sortvar | filter : search | filter : search1 | limitTo : myHouse.totalDisplayed">
+
+    <!-- Start of 3rd tab -->
+    <div id="test3" ng-show="selectedTab==3" class="col s12" ng-controller="allHousesController as myHouse" ng-init="myHouse.allHouses()">
+            <div class="col s6">
+                <div class="input-field">
+                    <input type="text" id="search1" ng-model="search.name">
+                    <label for="search1">Search by name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="search2" ng-model="search1.region">
+                    <label for="search2">Search by Region</label>
+                </div>
+            </div>
+            <div class="col s6"><br>
+                <button class="btn" style="float: right;" ng-click="myHouse.sort()">Sort A-Z</button>
+            </div>
+            <div class="col s12">
+                <div ng-repeat="book in myHouse.houses | orderBy : myHouse.sortvar | filter : search | filter : search1 | limitTo : myHouse.totalDisplayed">
           
-            <all-house></all-house>
+                    <all-house></all-house>
           
-        </div>
-        </div>
-          <div class="col s12" style="text-align: center;">
-          <button class="btn" ng-click="myHouse.loadMore()" >Load more</button>
-          </div>
+                </div>
+            </div>
+            <div class="col s12" style="text-align: center;">
+                <button class="btn" ng-click="myHouse.loadMore()" >Load more</button>
+            </div>
     </div>
-
-<div id="test4" ng-show="selectedTab==4" class="col s12" ng-controller="allCharacterController as myCharacter">
-    <div class="col s6">
-    <div class="input-field">
-    <input type="text" id="search1" ng-model="search.name">
-    <label for="search1">Search by name</label></div>
-    <div class="input-field">
-    <input type="text" id="search2" ng-model="search1.culture">
-    <label for="search2">Search by Culture</label></div>
-    </div>
-<div class="col s6"><br>
-<button class="btn" style="float: right;" ng-click="myCharacter.sort()">Sort A-Z</button>
-</div>
-<div class="col s12">
-      <div ng-repeat="book in myCharacter.character | orderBy : myCharacter.sortvar | filter : search | filter : search1 | limitTo : myCharacter.totalDisplayed">
-        <all-characters></all-characters>
-    </div>
-    </div>
-    <div class="col s12" style="text-align: center;">
-    <button class="btn" ng-click="myCharacter.loadMore()" >Load more</button>
+        <!-- Start of 4th tab -->
+    <div id="test4" ng-show="selectedTab==4" class="col s12" ng-controller="allCharacterController as myCharacter">
+            <div class="col s6">
+                <div class="input-field">
+                    <input type="text" id="search1" ng-model="search.name">
+                    <label for="search1">Search by name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="search2" ng-model="search1.culture">
+                    <label for="search2">Search by Culture</label>
+                </div>
+            </div>
+            <div class="col s6"><br>
+                <button class="btn" style="float: right;" ng-click="myCharacter.sort()">Sort A-Z</button>
+            </div>
+            <div class="col s12">
+                    <div ng-repeat="book in myCharacter.character | orderBy : myCharacter.sortvar | filter : search | filter : search1 | limitTo : myCharacter.totalDisplayed">
+                        <all-characters></all-characters>
+                    </div>
+            </div>
+            <div class="col s12" style="text-align: center;">
+                <button class="btn" ng-click="myCharacter.loadMore()" >Load more</button>
+            </div>
     </div>
 </div>

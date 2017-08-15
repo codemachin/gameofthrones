@@ -4,13 +4,13 @@ myApp.controller('allBooksController',['$http','BookService',function($http,Book
   var main = this;
   this.sortvar = "name";
 
-this.sort = function(){
-  if(main.sortvar=="name"){
-    main.sortvar="-name";
-  }else{
-    main.sortvar="name";
+  this.sort = function(){
+    if(main.sortvar=="name"){
+      main.sortvar="-name";
+    }else{
+      main.sortvar="name";
+    }
   }
-}
 
 
 
@@ -29,13 +29,15 @@ this.sort = function(){
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
-          alert("some error occurred. Check the console.");
-          console.log(response);
+          if(response.status != -1){
+            alert("some error occurred. Check the console.");
+            console.log(response);
+          }
         });
 
 
-  }// end load all blogs
-  this.allBooks();
+  }// end load all books
+ 
 
 
    
