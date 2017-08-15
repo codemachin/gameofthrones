@@ -61,14 +61,15 @@
 
     <!-- Start of 3rd tab -->
     <div id="test3" ng-show="selectedTab==3" class="col s12" ng-controller="allHousesController as myHouse" ng-init="myHouse.allHouses()">
-        <div class="col s6">
-            <div class="input-field">
-                <input type="text" id="search1" ng-model="search.name">
-                <label for="search1">Search by name</label>
-            </div>
-            <div class="input-field">
-                <input type="text" id="search2" ng-model="search1.region">
-                <label for="search2">Search by Region</label></div>
+            <div class="col s6">
+                <div class="input-field">
+                    <input type="text" id="search1" ng-model="search.name">
+                    <label for="search1">Search by name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="search2" ng-model="search1.region">
+                    <label for="search2">Search by Region</label>
+                </div>
             </div>
             <div class="col s6"><br>
                 <button class="btn" style="float: right;" ng-click="myHouse.sort()">Sort A-Z</button>
@@ -86,14 +87,15 @@
     </div>
         <!-- Start of 4th tab -->
     <div id="test4" ng-show="selectedTab==4" class="col s12" ng-controller="allCharacterController as myCharacter">
-        <div class="col s6">
-            <div class="input-field">
-                <input type="text" id="search1" ng-model="search.name">
-                <label for="search1">Search by name</label>
-            </div>
-            <div class="input-field">
-                <input type="text" id="search2" ng-model="search1.culture">
-                <label for="search2">Search by Culture</label></div>
+            <div class="col s6">
+                <div class="input-field">
+                    <input type="text" id="search1" ng-model="search.name">
+                    <label for="search1">Search by name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="search2" ng-model="search1.culture">
+                    <label for="search2">Search by Culture</label>
+                </div>
             </div>
             <div class="col s6"><br>
                 <button class="btn" style="float: right;" ng-click="myCharacter.sort()">Sort A-Z</button>
