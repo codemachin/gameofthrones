@@ -4,13 +4,13 @@ myApp.controller('allBooksController',['$http','BookService',function($http,Book
   var main = this;
   this.sortvar = "name";
 
-this.sort = function(){
-  if(main.sortvar=="name"){
-    main.sortvar="-name";
-  }else{
-    main.sortvar="name";
+  this.sort = function(){
+    if(main.sortvar=="name"){
+      main.sortvar="-name";
+    }else{
+      main.sortvar="name";
+    }
   }
-}
 
 
 
@@ -30,9 +30,9 @@ this.sort = function(){
           // called asynchronously if an error occurs
           // or server returns response with an error status.
           if(response.status != -1){
-          alert("some error occurred. Check the console.");
-          console.log(response);
-        }
+            alert("some error occurred. Check the console.");
+            console.log(response);
+          }
         });
 
 

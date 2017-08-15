@@ -4,22 +4,22 @@ myApp.controller('allCharacterController',['$http','BookService',function($http,
   var main = this;
   this.character=[];
 
-this.totalDisplayed = 20;
-this.sortvar = "name";
+  this.totalDisplayed = 20;
+  this.sortvar = "name";
 
-this.sort = function(){
-  if(main.sortvar=="name"){
-    main.sortvar="-name";
-  }else{
-    main.sortvar="name";
+  this.sort = function(){
+    if(main.sortvar=="name"){
+      main.sortvar="-name";
+    }else{
+      main.sortvar="name";
+    }
   }
-}
 
-this.loadMore = function () {
-  main.totalDisplayed += 20;  
-};
+  this.loadMore = function () {
+    main.totalDisplayed += 20;  
+  };
 
-// there were 50 pages to get data from thats why i have made a loop
+  // there were 50 pages to get data from thats why i have made a loop
   
 
   this.allCharacters = function(){
@@ -39,9 +39,9 @@ this.loadMore = function () {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
           if(response.status != -1){
-          alert("some error occurred. Check the console.");
-          console.log(response);
-        }
+            alert("some error occurred. Check the console.");
+            console.log(response);
+          }
         });
     }
 

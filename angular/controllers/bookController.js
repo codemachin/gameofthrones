@@ -3,7 +3,7 @@ myApp.controller('bookController',['$http','$routeParams','BookService',function
   //create a context
   var main = this;
   this.id = $routeParams.bookId;
-console.log(this.id);
+  console.log(this.id);
 
 
   this.allBooks = function(){
@@ -21,9 +21,9 @@ console.log(this.id);
           // called asynchronously if an error occurs
           // or server returns response with an error status.
           if(response.status != -1){
-          alert("some error occurred. Check the console.");
-          console.log(response);
-        }
+            alert("some error occurred. Check the console.");
+            console.log(response);
+          }
         });
 
 
